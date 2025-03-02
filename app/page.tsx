@@ -2,16 +2,17 @@
 
 import { useState } from "react";
 import C1 from "./C1";
+import GlobalHavuz from "./global-context";
 
 export default function Home() {
   const [isim, setIsim] = useState("Oğuzhan");
 
   return (
-    <main className="container mx-auto max-w-[1200px] border border-gray-200 p-4">
-      <h1 className="text-2xl font-bold">useContext Hooku</h1>
-      <div className="border border-gray-200 p-4 mt-4 rounded">
+    <GlobalHavuz.Provider value={{ isim, setIsim }}>
+      <main className="container mx-auto max-w-[1200px] border border-gray-200 p-4">
+        <h1 className="text-2xl font-bold">useContext Hooku</h1>
         <C1 />
-      </div>
-    </main>
+      </main>
+    </GlobalHavuz.Provider>
   );
 }
