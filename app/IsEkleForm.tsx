@@ -1,3 +1,5 @@
+"use client";
+
 export default function IsEkleForm({vekilFonksiyon}) {
 
     function formGonder(olay) {
@@ -11,6 +13,7 @@ export default function IsEkleForm({vekilFonksiyon}) {
         if(formIsAdi.trim() === "") { alert("İş bilgisi boş.."); return } // Eğer is adı boşsa fonksiyonu sonlandırıyoruz.
 
         vekilFonksiyon({type: "ekle", isAdi: formIsAdi}); // yeniIsEkle fonksiyonunu çalıştırıyoruz.
+        olay.target.reset(); // formu sıfırlıyoruz.
     }
 
     return (
